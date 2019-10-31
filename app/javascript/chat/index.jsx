@@ -12,9 +12,13 @@ import messagesReducer from './reducers/messages_reducer';
 
 const chatContainer = document.getElementById('chat_app');
 
+// use dataset from channels showpage to parse into json
+const channels = JSON.parse(chatContainer.dataset.channels).map(c => c.name);
+
+
 const initialState = {
   messages: [],
-  channels: [ 'general', 'random', 'react' ], // TODO: get that from Rails DB.
+  channels: channels, // TODO: get that from Rails DB.
 };
 
 const reducers = combineReducers({
