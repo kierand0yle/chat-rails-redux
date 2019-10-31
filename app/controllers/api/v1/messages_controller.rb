@@ -4,10 +4,14 @@ class Api::V1::MessagesController < ApplicationController
 
   def index
     @messages = Message.where(channel: @channel)
-    render json: @messages
+    render json: @messages # see Message.as_json method
   end
 
   def create
+    message = @channel.messages.build(content: params[:content])
+    message.user = current_user
+    message.save
+    render json: message # see Message.as_json method
   end
 
   private
