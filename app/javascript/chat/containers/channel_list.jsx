@@ -62,8 +62,8 @@ class ChannelList extends Component {
 
 function mapStateToProps(state) {
   return {
-    channels: state.channels,
-    selectedChannel: state.selectedChannel
+    channels: state.channels
+    // selectedChannel: state.selectedChannel not needed anymore as it's being taken from the route
   };
 }
 

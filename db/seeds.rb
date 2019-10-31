@@ -34,7 +34,7 @@ puts "Creating users...."
 
 users = [
   {email: "kieran@gmail.com", password: "test"},
-  {email: "emily@gmail.com", password: "test"}
+  {email: "emily@gmail.com", password: "test-2"}
 ]
 
 users.each do |user|
@@ -46,10 +46,10 @@ puts "Created users!"
 puts "Creating messages"
 
 messages = [
-  {content: "hi", user: User.first, channel: Channel.last},
-  {content: "yo", user: User.second, channel: Channel.second},
+  {content: "hi", user: User.first, channel: Channel.first},
+  {content: "yo", user: User.first, channel: Channel.first},
   {content: "no way!", user: User.first, channel: Channel.first},
-  {content: "how are things?", user: User.second, channel: Channel.second},
+  {content: "how are things?", user: User.first, channel: Channel.first},
   {content: "wasuppppp", user: User.first, channel: Channel.first}
 ]
 

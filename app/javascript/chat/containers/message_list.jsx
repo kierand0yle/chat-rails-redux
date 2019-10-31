@@ -48,8 +48,8 @@ class MessageList extends Component {
 
 function mapStateToProps(state) {
   return {
-    messages: state.messages,
-    selectedChannel: state.selectedChannel
+    messages: state.messages
+    // selectedChannel: state.selectedChannel not needed anymore as it's being taken from the route
   };
 }
 

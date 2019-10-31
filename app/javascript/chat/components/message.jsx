@@ -12,18 +12,22 @@ function strToRGB(str) {
   return `#${"00000".substring(0, 6 - c.length)}${c}`;
 }
 
+
 const Message = (props) => {
-  const { created_at, author, content } = props.message;
-  const time = new Date(created_at).toLocaleTimeString();
+  console.log(props.message);
+  const time = new Date(props.message.created_at).toLocaleTimeString()
+  const color = strToRGB(props.message.author);
+  const content = emojify(props.message.content);
   return (
     <div className="message-container">
       <i className="author">
-        <span style={{ color: strToRGB(author) }}>{author}</span>
+        <span style={{ color }}>{props.message.author}</span>
         <small>{time}</small>
       </i>
-      <p>{emojify(content)}</p>
+      <p>{content}</p>
     </div>
   );
 };
+
 
 export default Message;
